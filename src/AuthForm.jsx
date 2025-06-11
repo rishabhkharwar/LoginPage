@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AuthForm.css";
 
-// Password rules: min 8 chars, upper, lower, number, symbol
+
 const passwordRules = [
   { test: v => v.length >= 8, msg: "At least 8 characters" },
   { test: v => /[A-Z]/.test(v), msg: "One uppercase letter" },
@@ -30,7 +30,7 @@ export default function AuthForm() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Password validation for signup
+  
   const failedPasswordRules = passwordRules.filter(rule => !rule.test(signUp.password));
 
   // Social auth handlers (demo)
